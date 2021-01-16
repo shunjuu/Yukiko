@@ -64,6 +64,11 @@ def on_new_file(src_path, channel):
         Ayumi.info("New show name: {}".format(show_name), color=Ayumi.LYELLOW)
         Ayumi.info("New episode name: {}".format(episode_name), color=Ayumi.LYELLOW)
 
+        # There is an event where Anilist is down, and Naomi could return None.
+        # In this case, use the assumed-parsed show as the title
+        if not show_name:
+            show_name = anitopy.parse(new_file)['anime_title']
+
     job = {
         "show": show_name,
         "episode": episode_name,
