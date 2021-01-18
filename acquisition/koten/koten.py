@@ -90,7 +90,13 @@ def on_new_file(src_path, channel):
     # Send the notification to RabbitMQ
     # Because of threading reasons the publishing could fail, but we're not concerned with guaranteeing it.
     try:
-        message = rabbitpy.Message(channel, job)
+        message = rabbitpy.Message(
+            channel,
+            job,
+            properties={
+                "content_type": "application/json",
+                "delivery_mode": 2
+            })
 
         if message.publish(settings.get('KOTEN_EXCHANGE')):
             Ayumi.info("Job successfully published to RabbitMQ", color=Ayumi.LGREEN)
