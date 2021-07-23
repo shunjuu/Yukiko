@@ -132,6 +132,7 @@ def on_new_file(src_path, channel):
     return
 
 
+@retry(delay=60, backoff=1.5, max_delay=3600, logger=Ayumi.get_logger())
 def observe():
     try:
         with rabbitpy.Connection('amqp://{username}:{password}@{host}:{port}/{vhost}'.format(
