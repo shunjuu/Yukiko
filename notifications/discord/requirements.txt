@@ -3,6 +3,6 @@ dynaconf[redis,vault]==3.1.0
 requests==2.24.0
 rabbitpy==2.0.1
 hurry.filesize==0.9
-git+git://github.com/shunjuu/Ayumi@master#egg=ayumi
-git+git://github.com/shunjuu/Metsuke@master#egg=metsuke
-git+git://github.com/shunjuu/Hisha@master#egg=hisha
+git+https://github.com/shunjuu/Ayumi@master#egg=ayumi
+git+https://github.com/shunjuu/Metsuke@master#egg=metsuke
+git+https://github.com/shunjuu/Hisha@master#egg=hisha
