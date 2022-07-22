@@ -83,7 +83,7 @@ def consume():
                                         "-i",
                                         temp_abspath,
                                         "-vf",
-                                        "subtitles={}:force_style='FontName=Open Sans Semibold:fontsdir=/opt/fonts'".format(temp_abspath)
+                                        "subtitles={}:force_style='FontName=Open Sans Semibold':fontsdir=/opt/fonts".format(temp_abspath)
                                         ]
 
                                 # Get the string of flags user provided in config, or default to empty string
